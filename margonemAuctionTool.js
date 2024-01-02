@@ -7,8 +7,8 @@ const { spawn } = require("child_process"); // to run CNN captchaSolver.py
 puppeteer.use(StealthPlugin());
 require("dotenv").config();
 
-const login = process.margonemLogin;
-const password = process.margonemPassword;
+const login = process.env.margonemLogin;
+const password = process.env.margonemPassword;
 
 const excelSavePath = "auctionsData";
 
@@ -21,7 +21,7 @@ const scriptLoc =
 (async () => {
   const browser = await puppeteer.launch({
     args: [
-      `--proxy-server=http://${process.proxyAddress}:${process.proxyPort}`,
+      `--proxy-server=http://${process.env.proxyAddress}:${process.env.proxyPort}`,
     ],
     headless: false,
     slowMo: 100,
