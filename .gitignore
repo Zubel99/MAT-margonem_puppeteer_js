@@ -1,0 +1,5 @@
+node_modules
+botINFO
+*_items.xlsx
+tmp
+.env
